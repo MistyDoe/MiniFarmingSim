@@ -10,19 +10,27 @@ public class PlayerController : MonoBehaviour
 	public Rigidbody2D rig;
 	public SpriteRenderer sr;
 
-	// Called every 0.02 seconds.
+	private void Update()
+	{
+		if (moveInput.magnitude != 0.0f)
+		{
+			facingDir = moveInput.normalized;
+			sr.flipX = moveInput.x > 0;
+		}
+	}
+
 	void FixedUpdate()
 	{
-		// Move the player based on the input and move speed.
+
 		rig.velocity = moveInput.normalized * moveSpeed;
 	}
-	// Called when we press a movement key.
+
 	public void OnMoveInput(InputAction.CallbackContext context)
 	{
 		moveInput = context.ReadValue<Vector2>();
 	}
 
-	// Called when we press the interact key.
+
 	public void OnInteractInput(InputAction.CallbackContext context)
 	{
 		if (context.phase == InputActionPhase.Performed)
