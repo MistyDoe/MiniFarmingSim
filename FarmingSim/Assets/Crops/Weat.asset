@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd6be487b1c1c648b6e7ef0f2f24d2c, type: 3}
   m_Name: Weat
   m_EditorClassIdentifier: 
-  daysToGrow: 0
-  growProgressSprites: []
-  readyToHarvestSprite: {fileID: 0}
-  purchasePrice: 0
-  salePrice: 0
+  daysToGrow: 6
+  growProgressSprites:
+  - {fileID: 7754820193271194829, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
+  - {fileID: 9066994558733442910, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
+  - {fileID: 9066994558733442910, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
+  - {fileID: 9066994558733442910, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
+  - {fileID: -4037927129107817397, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
+  - {fileID: -4037927129107817397, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
+  readyToHarvestSprite: {fileID: 2784939769844691829, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
+  purchasePrice: 20
+  salePrice: 35
