@@ -124,3 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1c96f83ec2d314da091bc30e4f24a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cropPreFab: {fileID: 0}
+  sr: {fileID: 8021319842056799598}
+  tilled: 0
+  grassSprite: {fileID: 21300000, guid: b36b71734d871d84cbb27e9e07dc4413, type: 3}
+  tilledSprite: {fileID: 21300000, guid: 659d99f6729469a498a46a4383c95c5c, type: 3}
+  wateredTilledSprite: {fileID: 21300000, guid: 9b02c18a9989de84e9112d70f67a6dc6, type: 3}

@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FieldTile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	//private Crop currCrop;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public GameObject cropPreFab;
+
+	public SpriteRenderer sr;
+	public bool tilled;
+
+	[Header("Sprites")]
+	public Sprite grassSprite;
+	public Sprite tilledSprite;
+	public Sprite wateredTilledSprite;
+
+	public void Start()
+	{
+		sr.sprite = grassSprite;
+	}
+
+	public void Interact()
+	{
+		Debug.Log("Interacted!");
+	}
 }
