@@ -57,7 +57,8 @@ public class GameManager : MonoBehaviour
 	}
 	public bool CanPlantCrop()
 	{
-		return true;
+
+		return cropInInventory > 0;
 	}
 
 	public void OnBuyCrop(CropData crop)

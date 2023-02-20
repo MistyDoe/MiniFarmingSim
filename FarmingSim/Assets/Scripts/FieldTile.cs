@@ -35,7 +35,7 @@ public class FieldTile : MonoBehaviour
 		}
 		else
 		{
-			currCrop.Water();
+			Water();
 		}
 	}
 
