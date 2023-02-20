@@ -13,6 +13,18 @@ public class GameManager : MonoBehaviour
 
 	public event UnityAction onNewDay;
 
+	void OnEnable()
+	{
+		Crop.onCropPlant += OnPlantCrop;
+		Crop.onHarvestCrop += OnHarvestCrop;
+	}
+
+	void OnDisable()
+	{
+		Crop.onCropPlant -= OnPlantCrop;
+		Crop.onHarvestCrop -= OnHarvestCrop;
+
+	}
 	private void Awake()
 	{
 		if (instance != null && instance != this)
@@ -32,12 +44,12 @@ public class GameManager : MonoBehaviour
 
 	public void OnPlantCrop(CropData crop)
 	{
-
+		cropInInventory--;
 	}
 
 	public void OnHarvestCrop(CropData crop)
 	{
-
+		money += crop.salePrice;
 	}
 	public void PurchaseCrop(CropData crop)
 	{
