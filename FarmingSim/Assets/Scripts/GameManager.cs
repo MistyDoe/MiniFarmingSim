@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour
 	}
 	public bool CanPlantCrop()
 	{
-
 		return cropInInventory > 0;
 	}
 
