@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcd6be487b1c1c648b6e7ef0f2f24d2c, type: 3}
-  m_Name: Weat
+  m_Name: Wheat
   m_EditorClassIdentifier: 
   daysToGrow: 6
   growProgressSprites:
