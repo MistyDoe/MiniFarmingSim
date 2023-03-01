@@ -5329,7 +5329,7 @@ RectTransform:
   - {fileID: 787794628}
   - {fileID: 1165917430}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5758,7 +5758,7 @@ GameObject:
   - component: {fileID: 787794630}
   - component: {fileID: 787794629}
   m_Layer: 5
-  m_Name: BuyBeets
+  m_Name: BuyPotato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5782,7 +5782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 568, y: -503.8}
+  m_AnchoredPosition: {x: 858.1, y: -467.5}
   m_SizeDelta: {x: 281.658, y: -1050}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787794629
@@ -5834,7 +5834,7 @@ MonoBehaviour:
         m_MethodName: OnBuyCrop
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 11400000, guid: 0a69ac66d899d584ea620119d8a8cd58, type: 2}
           m_ObjectArgumentAssemblyTypeName: CropData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -6158,7 +6158,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &835708647
 MonoBehaviour:
@@ -8490,7 +8490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 784.9, y: -484.3}
+  m_AnchoredPosition: {x: 711.5, y: -392.3}
   m_SizeDelta: {x: 95.289, y: -1010.996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1165917431
@@ -10840,7 +10840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buy Beet Seeds
+  m_text: Buy Potato Seeds
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14556,7 +14556,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1850968908
 PrefabInstance:
@@ -14735,12 +14735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current days: 50
-
-    Money: 100
-
-    Seed inventory: Wheat 10, Beats
-    10 '
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -16335,60 +16330,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 657d5775ffc8c18449676f3834aeb03d, type: 3}
---- !u!1001 &3939029394376555291
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473294697011390616, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8864212377756785457, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
-      propertyPath: m_Name
-      value: Crop
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2d1705d116a561d479a2cb9068ba065d, type: 3}
