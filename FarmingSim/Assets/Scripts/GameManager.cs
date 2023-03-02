@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
 	public CropData selectedCropToPlant;
 	public TextMeshProUGUI statsText;
+	public Sprite coin;
 
 	public static GameManager instance;
 
@@ -79,6 +80,6 @@ public class GameManager : MonoBehaviour
 	}
 	void UpdateStatsText()
 	{
-		statsText.text = $"Day {curDay}\nMoney ${money}\nSeeds : {cropInInventory}";
+		statsText.text = $"Day {curDay}\n <sprite index=coin> : {money}\nSeeds : {cropInInventory}";
 	}
 }

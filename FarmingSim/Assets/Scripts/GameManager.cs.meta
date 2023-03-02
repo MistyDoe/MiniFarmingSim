@@ -3,7 +3,10 @@ guid: ff20f70d79679ee48ae3e07ad13ad530
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - selectedCropToPlant: {instanceID: 0}
+  - statsText: {instanceID: 0}
+  - coin: {fileID: 21300000, guid: 45000db7a4cc3d1468571ff14ce4db76, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
