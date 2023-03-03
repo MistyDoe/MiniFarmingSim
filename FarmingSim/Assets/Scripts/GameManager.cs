@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
 	public void PurchaseCrop(CropData crop)
 	{
 		UpdateStatsText();
-		money -= crop.salePrice;
+		money -= crop.purchasePrice;
 		cropInInventory++;
 		UpdateStatsText();
 
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
 
 	public void OnBuyCrop(CropData crop)
 	{
-		if (money >= crop.salePrice)
+		if (money >= crop.purchasePrice)
 		{
 			PurchaseCrop(crop);
 		}
