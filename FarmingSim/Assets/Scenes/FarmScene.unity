@@ -9329,7 +9329,7 @@ MonoBehaviour:
   cropInInventory: 4
   selectedCropToPlant: {fileID: 11400000, guid: 719378de36ed53e40bd0309521c1f7c8, type: 2}
   statsText: {fileID: 1866647259}
-  sp: {fileID: 0}
+  coin: {fileID: 0}
 --- !u!4 &1242847859
 Transform:
   m_ObjectHideFlags: 0
@@ -14719,7 +14719,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 289.04, y: -476.269}
+  m_AnchoredPosition: {x: 289.04, y: -359}
   m_SizeDelta: {x: 554.28, y: -974.138}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1866647259

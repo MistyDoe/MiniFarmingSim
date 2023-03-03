@@ -18,5 +18,7 @@ MonoBehaviour:
   - {fileID: 8845088905277404993, guid: 66f5a3651112a1a4293860d42b2bf2c6, type: 3}
   - {fileID: 8479888223881489277, guid: 66f5a3651112a1a4293860d42b2bf2c6, type: 3}
   readyToHarvestSprite: {fileID: 8479888223881489277, guid: 66f5a3651112a1a4293860d42b2bf2c6, type: 3}
+  Name: Potato
+  quantityInInventory: 4
   purchasePrice: 20
   salePrice: 30
