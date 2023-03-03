@@ -44,42 +44,46 @@ public class GameManager : MonoBehaviour
 	{
 		curDay++;
 		onNewDay?.Invoke();
-		UpdateStatsText();
+		UpdateStatsText(selectedCropToPlant);
 	}
 
 	public void OnPlantCrop(CropData crop)
 	{
-		cropInInventory--;
-		UpdateStatsText();
+		--selectedCropToPlant.quantityInInventory;
+		UpdateStatsText(selectedCropToPlant);
 	}
 
 	public void OnHarvestCrop(CropData crop)
 	{
-		money += crop.salePrice;
-		UpdateStatsText();
+		money += selectedCropToPlant.salePrice;
+		UpdateStatsText(selectedCropToPlant);
 	}
-	public void PurchaseCrop(CropData crop)
+	public void PurchaseCrop(CropData selectedCropToPlant)
 	{
-		UpdateStatsText();
-		money -= crop.purchasePrice;
-		cropInInventory++;
-		UpdateStatsText();
+		money -= selectedCropToPlant.purchasePrice;
+		selectedCropToPlant.quantityInInventory++;
+		UpdateStatsText(selectedCropToPlant);
 
 	}
 	public bool CanPlantCrop()
 	{
-		return cropInInventory > 0;
+		return selectedCropToPlant.quantityInInventory > 0;
 	}
 
 	public void OnBuyCrop(CropData crop)
 	{
-		if (money >= crop.purchasePrice)
+		if (money >= selectedCropToPlant.purchasePrice)
 		{
 			PurchaseCrop(crop);
 		}
 	}
-	void UpdateStatsText()
+	void UpdateStatsText(CropData selectedCropToPlant)
+
+
+	//TODO
+
+	//Fix: add inventory object
 	{
-		statsText.text = $"Day {curDay}\n <sprite index=coin> : {money}\nSeeds : {cropInInventory}";
+		statsText.text = $"Day {curDay}\n <sprite index=coin> : {money}\nSeeds :\n {selectedCropToPlant.name} {selectedCropToPlant.quantityInInventory}";
 	}
 }
