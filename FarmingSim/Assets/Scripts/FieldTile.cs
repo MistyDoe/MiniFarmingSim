@@ -23,11 +23,14 @@ public class FieldTile : MonoBehaviour
 	{
 		if (!tilled)
 		{
+			Debug.Log("1st IF");
 			Till();
 		}
 		else if (!HasCrop() && GameManager.instance.CanPlantCrop())
 		{
+			Debug.Log("");
 			PlantNewCrop(GameManager.instance.selectedCropToPlant);
+			Debug.Log("After Selected plant");
 		}
 		else if (HasCrop() && currCrop.CanHarvest())
 		{

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd6be487b1c1c648b6e7ef0f2f24d2c, type: 3}
   m_Name: Wheat
   m_EditorClassIdentifier: 
+  Name: Wheat
+  Quantity: 10
+  Type: Seed
   daysToGrow: 6
   growProgressSprites:
   - {fileID: 7754820193271194829, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
@@ -21,7 +24,8 @@ MonoBehaviour:
   - {fileID: -4037927129107817397, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
   - {fileID: -4037927129107817397, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
   readyToHarvestSprite: {fileID: 2784939769844691829, guid: aaa46083a04b77a49ba01d9f070a59f0, type: 3}
-  Name: Potato
-  quantityInInventory: 0
+  cropName: Wheat
+  itemType: Seed
+  quantityInInventory: 10
   purchasePrice: 20
   salePrice: 35

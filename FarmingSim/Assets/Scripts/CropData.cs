@@ -14,6 +14,11 @@ public class CropData : InventoryItem
 	public int salePrice;
 
 
-
+	public CropData(InventoryItem item)
+	{
+		cropName = item.Name;
+		itemType = item.Type;
+		quantityInInventory = item.Quantity;
+	}
 
 }

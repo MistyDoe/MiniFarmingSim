@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 	public CropData selectedCropToPlant;
 	public TextMeshProUGUI statsText;
 	public Sprite coin;
-
+	public Inventory inventory;
 	public static GameManager instance;
 
 	public event UnityAction onNewDay;
@@ -40,7 +40,11 @@ public class GameManager : MonoBehaviour
 			instance = this;
 		}
 	}
-
+	public void SetSelectedCrop(CropData selectedCrop)
+	{
+		selectedCropToPlant = selectedCrop;
+		Debug.Log(selectedCropToPlant.Name);
+	}
 	public void SetNextDay()
 	{
 		curDay++;
@@ -68,6 +72,7 @@ public class GameManager : MonoBehaviour
 	}
 	public bool CanPlantCrop()
 	{
+		Debug.Log(selectedCropToPlant.quantityInInventory);
 		return selectedCropToPlant.quantityInInventory > 0;
 	}
 
@@ -79,12 +84,13 @@ public class GameManager : MonoBehaviour
 		}
 	}
 	void UpdateStatsText(CropData selectedCropToPlant)
-
-
-	//TODO
-
-	//Fix: add inventory object
 	{
-		statsText.text = $"Day {curDay}\n <sprite index=coin> : {money}\nSeeds :\n {selectedCropToPlant.cropName} {selectedCropToPlant.quantityInInventory}";
+		Debug.Log(selectedCropToPlant.Name);
+		foreach (InventoryItem item in inventory.items)
+		{
+			statsText.text = $"{item.Name} X {item.Quantity}";
+		}
+		Debug.Log("Inventory Empty", selectedCropToPlant);
+		//statsText.text = $"Day {curDay}\n <sprite index=coin> : {money}\nSeeds :\n {selectedCropToPlant.cropName} {selectedCropToPlant.quantityInInventory}";
 	}
 }
