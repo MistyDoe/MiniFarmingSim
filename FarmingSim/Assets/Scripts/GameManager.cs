@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 	{
 		Crop.onCropPlant += OnPlantCrop;
 		Crop.onHarvestCrop += OnHarvestCrop;
+
 	}
 
 	void OnDisable()
@@ -84,6 +85,6 @@ public class GameManager : MonoBehaviour
 
 	//Fix: add inventory object
 	{
-		statsText.text = $"Day {curDay}\n <sprite index=coin> : {money}\nSeeds :\n {selectedCropToPlant.name} {selectedCropToPlant.quantityInInventory}";
+		statsText.text = $"Day {curDay}\n <sprite index=coin> : {money}\nSeeds :\n {selectedCropToPlant.cropName} {selectedCropToPlant.quantityInInventory}";
 	}
 }
