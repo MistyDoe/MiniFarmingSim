@@ -85,12 +85,7 @@ public class GameManager : MonoBehaviour
 	}
 	void UpdateStatsText(CropData selectedCropToPlant)
 	{
-		Debug.Log(selectedCropToPlant.Name);
-		foreach (InventoryItem item in inventory.items)
-		{
-			statsText.text = $"{item.Name} X {item.Quantity}";
-		}
-		Debug.Log("Inventory Empty", selectedCropToPlant);
-		//statsText.text = $"Day {curDay}\n <sprite index=coin> : {money}\nSeeds :\n {selectedCropToPlant.cropName} {selectedCropToPlant.quantityInInventory}";
+
+		statsText.text = $"Day {curDay}\n <sprite index=coin> : {money}\nSeeds :\n {selectedCropToPlant.cropName} {selectedCropToPlant.quantityInInventory}";
 	}
 }
