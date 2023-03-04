@@ -1,16 +1,24 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CropData", menuName = "New Crop Data")]
-public class CropData : ScriptableObject
+public class CropData : InventoryItem
 {
 	public int daysToGrow;
 	public Sprite[] growProgressSprites;
 	public Sprite readyToHarvestSprite;
-	public string Name;
+	public string cropName;
+	public string itemType;
 	public int quantityInInventory;
 
 	public int purchasePrice;
 	public int salePrice;
 
+
+	public CropData(InventoryItem item)
+	{
+		cropName = item.Name;
+		itemType = item.Type;
+		quantityInInventory = item.Quantity;
+	}
 
 }

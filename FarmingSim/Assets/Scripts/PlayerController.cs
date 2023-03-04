@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 		if (hit.collider != null)
 		{
 			FieldTile tile = hit.collider.GetComponent<FieldTile>();
+			Debug.Log("TryineractTile, before interact()");
 			tile.Interact();
 		}
 	}

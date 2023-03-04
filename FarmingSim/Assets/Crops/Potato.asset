@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd6be487b1c1c648b6e7ef0f2f24d2c, type: 3}
   m_Name: Potato
   m_EditorClassIdentifier: 
+  Name: Potato
+  Quantity: 4
+  Type: Seed
   daysToGrow: 4
   growProgressSprites:
   - {fileID: -3043213038907666031, guid: 66f5a3651112a1a4293860d42b2bf2c6, type: 3}
   - {fileID: 8845088905277404993, guid: 66f5a3651112a1a4293860d42b2bf2c6, type: 3}
   - {fileID: 8479888223881489277, guid: 66f5a3651112a1a4293860d42b2bf2c6, type: 3}
   readyToHarvestSprite: {fileID: 8479888223881489277, guid: 66f5a3651112a1a4293860d42b2bf2c6, type: 3}
-  Name: Potato
+  cropName: Potato
+  itemType: Seed
   quantityInInventory: 4
   purchasePrice: 20
   salePrice: 30
