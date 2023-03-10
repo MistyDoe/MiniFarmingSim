@@ -1,18 +1,28 @@
+using System;
 using UnityEngine;
 
-public class Grid : MonoBehaviour
+public class Grid<TGridObject>
 {
+	public event EventHandler<OnGridObjectChangeEventArgs> OnGridObjectChange;
+	public class OnGridObjectChangeEventArgs : EventArgs
+	{
+		public int x;
+		public int y;
+	}
+
 	public int width;
 	public int heigth;
 	private float cellSize;
 	private int[,] gridArray;
+	private Vector3 originPosition;
 
 
-	public Grid(int width, int height, float cellSize)
+	public Grid(int width, int height, float cellSize, Vector3 originPosition, Func<Grid<TGridObject>>, int , int, TGridObject createdGridObject)
 	{
 		this.width = width;
 		this.heigth = height;
 		this.cellSize = cellSize;
+		this.originPosition = originPosition;
 
 		gridArray = new int[width, height];
 
@@ -34,7 +44,16 @@ public class Grid : MonoBehaviour
 
 	private Vector3 GetWorldPosition(int x, int y)
 	{
-		return new Vector3(x, y) * cellSize;
+		return new Vector3(x, y) * cellSize + originPosition;
+	}
+	public void Setvalue(int x, int y, int value)
+	{
+		if (x >= 0 && y >= 0 && x < width && y < heigth)
+		{
+			gridArray[x, y] = value;
+			if (OnGridObjectChange != null) OnGridObjectChange(this, new OnGridObjectChangeEventArgs { x = x, y = y });
+
+		}
 	}
 
 }
