@@ -8,9 +8,9 @@ public class Pathfinding
 	private Grid<PathNode> grid;
 	private List<PathNode> openList;
 	private List<PathNode> closedList;
-	public Pathfinding(int width, int heith)
+	public Pathfinding(int width, int heigth)
 	{
-		grid = new Grid<PathNode>(width, heith, 10f, Vector3.zero, (Grid<PathNode> g, int x, int y) => new PathNode(g, x, y));
+		grid = new Grid<PathNode>(width, heigth, 10f, Vector3.zero, (Grid<PathNode> g, int x, int y) => new PathNode(g, x, y));
 
 	}
 	public Grid<PathNode> GetGrid() { return grid; }
@@ -21,6 +21,7 @@ public class Pathfinding
 
 		openList = new List<PathNode> { startNode };
 		closedList = new List<PathNode>();
+
 
 		for (int x = 0; x < grid.GetWidth(); x++)
 		{
@@ -123,6 +124,8 @@ public class Pathfinding
 	}
 	private int CalculateDistanceCost(PathNode a, PathNode b)
 	{
+		Debug.Log(a);
+		Debug.Log(b);
 		int xDistance = Mathf.Abs(a.x - b.x);
 		int yDistance = Mathf.Abs(a.y - b.y);
 		int remaining = Mathf.Abs(xDistance - yDistance);

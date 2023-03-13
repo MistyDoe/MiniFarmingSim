@@ -11,7 +11,7 @@ public class Grid<TGridObject>
 	}
 
 	public int width;
-	public int heigth;
+	public int height;
 	private float cellSize;
 	private TGridObject[,] gridArray;
 	private Vector3 originPosition;
@@ -19,8 +19,9 @@ public class Grid<TGridObject>
 
 	public Grid(int width, int height, float cellSize, Vector3 originPosition, Func<Grid<TGridObject>, int, int, TGridObject> createdGridObject)
 	{
+		Debug.Log("NewGridGrid");
 		this.width = width;
-		this.heigth = height;
+		this.height = height;
 		this.cellSize = cellSize;
 		this.originPosition = originPosition;
 		this.cellSize = cellSize;
@@ -61,10 +62,13 @@ public class Grid<TGridObject>
 	{
 		x = Mathf.FloorToInt((worldPosition - originPosition).x / cellSize);
 		y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
+
+		Debug.Log(x);
+		Debug.Log(y);
 	}
 	public void SetGridObject(int x, int y, TGridObject value)
 	{
-		if (x >= 0 && y >= 0 && x < width && y < heigth)
+		if (x >= 0 && y >= 0 && x < width && y < height)
 		{
 			gridArray[x, y] = value;
 			if (OnGridObjectChange != null) OnGridObjectChange(this, new OnGridObjectChangeEventArgs { x = x, y = y });
@@ -83,7 +87,7 @@ public class Grid<TGridObject>
 
 	public TGridObject GetGridObject(int x, int y)
 	{
-		if (x >= 0 && y >= 0 && x < width && y < heigth)
+		if (x >= 0 && y >= 0 && x < width && y < height)
 		{
 			return gridArray[x, y];
 		}
@@ -102,7 +106,7 @@ public class Grid<TGridObject>
 	}
 	public int GetHeight()
 	{
-		return heigth;
+		return height;
 	}
 	public int GetWidth()
 	{
