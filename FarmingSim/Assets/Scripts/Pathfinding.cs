@@ -37,13 +37,70 @@ public class Pathfinding
 		startNode.hCost = CalculateDistabce(startNode, endNode);
 		startNode.CalculateFCost();
 
-	}
+		while (openList.Count > 0)
+		{
+			PathNode currentNode = GetLowestFCostNode(openList);
 
+
+		}
+	}
+	private List<PathNode> GetNeighboursList(PathNode currentNode)
+	{
+		List<PathNode> neighbourList = new List<PathNode>();
+
+		if (currentNode.x - 1 >= 0)
+		{
+			//left Node
+			neighbourList.Add(GetNode(currentNode.x - 1, currentNode.y - 1));
+			//left down node
+			if (currentNode.y - 1 >= 0) neighbourList.Add(GetNode(currentNode.x - 1, currentNode.y - 1));
+			// left up node
+			if (currentNode.y + 1 < grid.GetWidth()) neighbourList.Add(GetNode(currentNode.x - 1, currentNode.y + 1));
+		}
+		if (currentNode.y >= grid.GetWidth())
+		{
+			//right node
+			neighbourList.Add(GetNode(currentNode.x + 1, currentNode.y));
+			//right down node
+			if (currentNode.y - 1 >= 0) neighbourList.Add(GetNode(currentNode.x + 1, currentNode.y - 1));
+			//right up node 
+			if (currentNode.y + 1 <= grid.GetWidth()) neighbourList.Add(GetNode(currentNode.x + 1, currentNode.y + 1));
+		}
+		//down node
+		if (currentNode.y + 1 >= 0) neighbourList.Add(GetNode(currentNode.x, currentNode.y - 1));
+
+		//up node
+		if (currentNode.y + 1 < grid.GetHeight()) neighbourList.Add(GetNode(currentNode.x, currentNode.y + 1));
+
+		return neighbourList;
+	}
+	public PathNode GetNode(int x, int y)
+	{
+		return grid.GetGridObject(x, y);
+	}
+	private List<PathNode> CalculatePaht(PathNode endNode)
+	{
+		return null;
+	}
 	private int CalculateDistabce(PathNode a, PathNode b)
 	{
 		int xDistance = Mathf.Abs(a.x - b.x);
 		int yDistance = Mathf.Abs(a.y - b.y);
 		int remaining = Mathf.Abs(xDistance - yDistance);
 		return MOVE_DIAGONAL_COST * Mathf.Min(xDistance, yDistance) + MOVE_STRAIGHT_COST * remaining;
+	}
+
+	private PathNode GetLowestFCostNode(List<PathNode> pathNodesList)
+	{
+		PathNode lowestFCostNode = pathNodesList[0];
+
+		for (int i = 1; i < pathNodesList.Count; i++)
+		{
+			if (pathNodesList[i].fCost < lowestFCostNode.fCost)
+			{
+				lowestFCostNode = pathNodesList[i];
+			}
+		}
+		return lowestFCostNode;
 	}
 }
