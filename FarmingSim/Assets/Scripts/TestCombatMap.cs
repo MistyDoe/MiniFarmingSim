@@ -4,7 +4,7 @@ public class TestCombatMap : MonoBehaviour
 {
 	void Start()
 	{
-		Grid grid = new Grid(20, 10, 10f);
+		Pathfinding pathfinding = new Pathfinding(10, 10);
 	}
 
 

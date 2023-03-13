@@ -23,22 +23,33 @@ public class Grid<TGridObject>
 		this.heigth = height;
 		this.cellSize = cellSize;
 		this.originPosition = originPosition;
+		this.cellSize = cellSize;
 
 		gridArray = new TGridObject[width, height];
-
-		Debug.Log(width + ", " + height);
-		this.cellSize = cellSize;
 
 		for (int x = 0; x < gridArray.GetLength(0); x++)
 		{
 			for (int y = 0; y < gridArray.GetLength(1); y++)
 			{
-				Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.red, 100f);
-				Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.red, 100f);
+				gridArray[x, y] = createdGridObject(this, x, y);
 			}
+		}
+		bool showDebug = true;
 
-			Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.red, 100f);
-			Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.red, 100f);
+		if (showDebug)
+		{
+			TextMesh[,] debugTextArray = new TextMesh[width, height];
+			for (int x = 0; x < gridArray.GetLength(0); x++)
+			{
+				for (int y = 0; y < gridArray.GetLength(1); y++)
+				{
+					Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.red, 100f);
+					Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.red, 100f);
+				}
+
+				Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.red, 100f);
+				Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.red, 100f);
+			}
 		}
 	}
 
@@ -88,6 +99,14 @@ public class Grid<TGridObject>
 		GetXY(worldPosition, out x, out y);
 
 		return GetGridObject(x, y);
+	}
+	public int GetHeight()
+	{
+		return heigth;
+	}
+	public int GetWidth()
+	{
+		return width;
 	}
 
 }

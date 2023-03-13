@@ -1,8 +1,8 @@
 public class PathNode
 {
 	private Grid<PathNode> grid;
-	private int x;
-	private int y;
+	public int x;
+	public int y;
 	public int gCost;
 	public int hCost;
 	public int fCost;
@@ -18,5 +18,10 @@ public class PathNode
 	public override string ToString()
 	{
 		return x + "," + y;
+	}
+
+	internal void CalculateFCost()
+	{
+		fCost = gCost + hCost;
 	}
 }
