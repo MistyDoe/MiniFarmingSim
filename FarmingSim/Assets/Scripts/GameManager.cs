@@ -88,4 +88,25 @@ public class GameManager : MonoBehaviour
 
 		statsText.text = $"Day {curDay}\n <sprite index=coin> : {money}\nSeeds :\n {selectedCropToPlant.cropName} {selectedCropToPlant.quantityInInventory}";
 	}
+
+	public static Vector3 GetMouseWorldPosition()
+	{
+		Vector3 vec = GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);
+		vec.z = 0f;
+		return vec;
+	}
+
+	private static Vector3 GetMouseWorldPositionWithZ()
+	{
+		return GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);
+	}
+	private static Vector3 GetMouseWorldPositionWithZ(Camera worldCamera)
+	{
+		return GetMouseWorldPositionWithZ(Input.mousePosition, worldCamera);
+	}
+	private static Vector3 GetMouseWorldPositionWithZ(Vector3 screenPosition, Camera worldCamera)
+	{
+		Vector3 worldPosition = worldCamera.WorldToScreenPoint(screenPosition);
+		return worldPosition;
+	}
 }
