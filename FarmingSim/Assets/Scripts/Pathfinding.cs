@@ -34,14 +34,40 @@ public class Pathfinding
 
 		}
 		startNode.gCost = 0;
-		startNode.hCost = CalculateDistabce(startNode, endNode);
+		startNode.hCost = CalculateDistanceCost(startNode, endNode);
 		startNode.CalculateFCost();
 
 		while (openList.Count > 0)
 		{
 			PathNode currentNode = GetLowestFCostNode(openList);
+			if (currentNode == endNode)
+			{
+				return CalculatePath(endNode);
+			}
 
+			openList.Remove(currentNode);
+			closedList.Add(currentNode);
 
+			foreach (PathNode neighbourNode in GetNeighboursList(currentNode))
+			{
+				if (closedList.Contains(neighbourNode)) continue;
+
+				int tempGCost = currentNode.gCost + CalculateDistanceCost(currentNode, neighbourNode);
+
+				if (tempGCost < neighbourNode.gCost)
+				{
+					neighbourNode.cameFromNode = currentNode;
+					neighbourNode.gCost = tempGCost;
+					neighbourNode.hCost = CalculateDistanceCost(neighbourNode, endNode);
+					neighbourNode.CalculateFCost();
+
+					if (!openList.Contains(neighbourNode))
+					{
+						openList.Add(neighbourNode);
+					}
+				}
+
+			}
 		}
 	}
 	private List<PathNode> GetNeighboursList(PathNode currentNode)
@@ -78,11 +104,11 @@ public class Pathfinding
 	{
 		return grid.GetGridObject(x, y);
 	}
-	private List<PathNode> CalculatePaht(PathNode endNode)
+	private List<PathNode> CalculatePath(PathNode endNode)
 	{
 		return null;
 	}
-	private int CalculateDistabce(PathNode a, PathNode b)
+	private int CalculateDistanceCost(PathNode a, PathNode b)
 	{
 		int xDistance = Mathf.Abs(a.x - b.x);
 		int yDistance = Mathf.Abs(a.y - b.y);
